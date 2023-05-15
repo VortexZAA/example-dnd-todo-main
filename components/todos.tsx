@@ -1,5 +1,5 @@
 import React from "react";
-import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
+import { DragDropContext, Draggable, Droppable, DropResult } from "@hello-pangea/dnd";
 import { Status, Todo, TodosStatus, TodosView } from "../models/todo";
 import type {
   DraggableProvided,
