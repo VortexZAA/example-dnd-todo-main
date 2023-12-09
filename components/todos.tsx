@@ -67,7 +67,7 @@ const Todos: React.FC<Props> = ({
               {...mainDroppableProvided.droppableProps}
             >
               {mainColmTodos.map((colm, index) => (
-                <Draggable key={index} draggableId={`Colm${colm.id}`} index={index}>
+                <Draggable key={index} draggableId={`Colm${colm.id+colm.name}`} index={index}>
                   {(draggableProvided, draggableSnapshot) => (
                     <div
                       className="bg-gray-400 px-5 py-3 rounded-md"
