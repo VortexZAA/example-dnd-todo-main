@@ -67,7 +67,7 @@ const Todos: React.FC<Props> = ({
               {...mainDroppableProvided.droppableProps}
             >
               {mainColmTodos.map((colm, index) => (
-                <Draggable draggableId={`Colm${colm.id}`} index={index}>
+                <Draggable key={index} draggableId={`Colm${colm.id}`} index={index}>
                   {(draggableProvided, draggableSnapshot) => (
                     <div
                       className="bg-gray-400 px-5 py-3 rounded-md"
@@ -123,114 +123,6 @@ const Todos: React.FC<Props> = ({
                   )}
                 </Draggable>
               ))}
-              {/* <Draggable draggableId={"BacklogTodos2"} index={0}>
-                {(draggableProvided, draggableSnapshot) => (
-                  <div
-                    className="bg-gray-400 px-5 py-3 rounded-md"
-                    ref={draggableProvided.innerRef}
-                    {...draggableProvided.draggableProps}
-                    {...draggableProvided.dragHandleProps}
-                  >
-                    <Droppable droppableId={"BacklogTodos"}>
-                      {(droppableProvided, droppableSnapshot) => (
-                        <div
-                          className="bg-gray-400 px-5 py-3 rounded-md"
-                          ref={droppableProvided.innerRef}
-                          {...droppableProvided.droppableProps}
-                        >
-                          <span className="text-white text-2xl font-semibold">
-                            Backlog
-                          </span>
-                          {backlogTodos?.map((todo, index) => (
-                            <TodoItem
-                              hasDoneIcon={true}
-                              index={index}
-                              key={todo?.id}
-                              todo={todo}
-                              todos={backlogTodos}
-                              setTodos={setBacklogTodos}
-                            />
-                          ))}
-                          {droppableProvided.placeholder}
-                        </div>
-                      )}
-                    </Droppable>
-                  </div>
-                )}
-              </Draggable>
-              <Draggable draggableId={"BacklogTodos3"} index={1}>
-                {(draggableProvided, draggableSnapshot) => (
-                  <div
-                    className=" w-full"
-                    ref={draggableProvided.innerRef}
-                    {...draggableProvided.draggableProps}
-                    {...draggableProvided.dragHandleProps}
-                  >
-                    <Droppable droppableId={TodosStatus.ActiveTodos}>
-                      {(droppableProvided, droppableSnapshot) => (
-                        <div
-                          className={`bg-blue-400 px-5 py-3 rounded-md ${
-                            droppableSnapshot.isDraggingOver ? "opacity-80" : ""
-                          }`}
-                          ref={droppableProvided.innerRef}
-                          {...droppableProvided.droppableProps}
-                        >
-                          <span className="text-white text-2xl font-semibold">
-                            Active
-                          </span>
-                          {activeTodos?.map((todo, index) => (
-                            <TodoItem
-                              hasDoneIcon={true}
-                              index={index}
-                              key={todo?.id}
-                              todo={todo}
-                              todos={activeTodos}
-                              setTodos={setActiveTodos}
-                            />
-                          ))}
-                          {droppableProvided.placeholder}
-                        </div>
-                      )}
-                    </Droppable>
-                  </div>
-                )}
-              </Draggable>
-              <Draggable draggableId={"BacklogTodos4"} index={2}>
-                {(draggableProvided, draggableSnapshot) => (
-                  <div
-                    className=" w-full"
-                    ref={draggableProvided.innerRef}
-                    {...draggableProvided.draggableProps}
-                    {...draggableProvided.dragHandleProps}
-                  >
-                    <Droppable droppableId={TodosStatus.CompletedTodos}>
-                      {(droppableProvided, droppableSnapshot) => (
-                        <div
-                          className="bg-red-400 px-5 py-3 rounded-md"
-                          ref={droppableProvided.innerRef}
-                          {...droppableProvided.droppableProps}
-                        >
-                          <span className="text-white text-2xl font-semibold">
-                            Completed
-                          </span>
-                          {completedTodos?.map((todo, index) => (
-                            <TodoItem
-                              hasDoneIcon={true}
-                              index={index}
-                              key={todo.id}
-                              todo={todo}
-                              todos={completedTodos}
-                              setTodos={setCompletedTodos}
-                            />
-                          ))}
-                          {droppableProvided.placeholder}
-                        </div>
-                      )}
-                    </Droppable>
-                  </div>
-                )}
-              </Draggable> */}
-
               {mainDroppableProvided.placeholder}
             </div>
           )}
